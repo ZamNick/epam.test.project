@@ -2,8 +2,6 @@
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
-console.log(__dirname);
-
 module.exports = {
     context: __dirname + "/www/js",
 	entry: "./app",
