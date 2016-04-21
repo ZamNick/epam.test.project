@@ -7,17 +7,23 @@ body {
 }
 header {
 	height: 70px;
-	border-bottom: 1px solid rgb(58, 58, 58);
-	position: absolute;
+	width: 100%;
+	margin-top: 20px;
+}
+#wrapper-header {
+	position: relative;
+	height: 70px;
+	left: 50%;
+	margin-left: -500px;
 	width: 1000px;
-	left: 150px;
-	top: 20px;
+	border-bottom: 1px solid rgb(58, 58, 58);
 }
 #logo {
 	color: white;
 	font-size: 40px;
 	position: absolute;
 	top: 10px;
+	margin-left: 5px;
 	font-family: 'Curlz MT';
 }
 #sections {
@@ -39,4 +45,43 @@ header {
 header img {
 	height: 100%;
 	width: 100%;
+}
+
+/* Tablet */
+@media (max-width: 999px) {
+
+	#wrapper-header {
+		width: 100%;
+		margin-left: 0px;
+		left: 0px;
+	}
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+	#wrapper-header {
+		height: 50px;
+	}
+
+	#logo {
+		font-size: 18px;
+		left: 50%;
+		margin-left: -105px;
+	}
+
+	#search {
+		left: 0px;
+		top: 50%;
+		margin-top: -25px;
+		margin-left: 5px;
+	}
+
+	#sections {
+		top: 50%;
+		margin-top: -25px;
+		margin-right: 5px;
+	}
+
 }
