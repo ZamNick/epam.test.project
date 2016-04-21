@@ -85,3 +85,41 @@ header img {
 	}
 
 }
+
+
+
+/* SECTION */
+#section-name {
+	color: white;
+	font-weight: bold;
+	width: 1000px;
+	border-bottom: 1px solid rgb(58, 58, 58);
+	position: relative;
+	text-align: center;
+	left: 50%;
+	margin-left: -500px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 20px;
+}
+
+/* Tablet */
+@media (max-width: 999px) {
+
+	#section-name {
+		width: 100%;
+		margin-left: 0px;
+		left: 0px;
+	}
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+	#section-name {
+		padding-top: 0px;
+		margin-top: -15px;
+	}
+
+}
