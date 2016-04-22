@@ -46,6 +46,10 @@ header img {
 	height: 100%;
 	width: 100%;
 }
+#search:hover, #sections:hover {
+	background-color: #242424;
+	border-radius: 5px;
+}
 
 /* Tablet */
 @media (max-width: 999px) {
