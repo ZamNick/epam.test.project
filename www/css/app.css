@@ -191,5 +191,11 @@ footer img {
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	padding: 10px;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+#github-logo:hover {
+	background-color: #242424;
+	border-radius: 5px;
 }
