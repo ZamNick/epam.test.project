@@ -193,10 +193,9 @@ header img {
 	text-align: center;
 }
 
-#left-list-of-notes {
+.list-of-notes {
 	width: 499px;
 	height: auto;
-	border-right: 1px solid rgb(58, 58, 58);
 	display: inline-block;
 }
 
@@ -221,14 +220,6 @@ header img {
 .headline {
 	padding: 3px;
 	width: 400px;
-}
-
-#right-list-of-notes {
-	margin-left: -5px;
-	border-left: 1px solid rgb(58, 58, 58);
-	width: 499px;
-	height: auto;
-	display: inline-block;
 }
 
 /* Tablet */
