@@ -12,7 +12,7 @@ header {
 }
 #wrapper-header {
 	position: relative;
-	height: 70px;
+	height: 100%;
 	left: 50%;
 	margin-left: -500px;
 	width: 1000px;
@@ -155,4 +155,41 @@ html::-webkit-scrollbar-thumb:window-inactive {
 
 html::-webkit-scrollbar-track-piece {
 	background: black;
+}
+
+
+
+/* FOOTER */
+footer {
+	width: 100%;
+	height: 70px;
+}
+
+footer span {
+	color: white;
+	margin-left: 10px;
+}
+
+footer img {
+	height: 100%;
+	width: 100%;
+}
+
+#wrapper-footer {
+	position: relative;
+	height: 100%;
+	left: 50%;
+	margin-left: -500px;
+	width: 1000px;
+	border-top: 1px solid rgb(58, 58, 58);
+	padding-top: 20px;
+}
+
+#github-logo {
+	height: 40px;
+	width: 40px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding: 10px;
 }
