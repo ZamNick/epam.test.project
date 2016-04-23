@@ -236,11 +236,11 @@ header img {
 	border-left: 1px solid rgb(58, 58, 58);
 }
 
-#left-main-note {
+.left-main-note {
 	border-right: 1px solid rgb(58, 58, 58);
 }
 
-#right-main-note {
+.right-main-note {
 	margin-left: -5px;
 	border-left: 1px solid rgb(58, 58, 58);
 }
@@ -256,11 +256,11 @@ header img {
 		margin-left: 0px;
 	}
 
-	#right-main-note {
+	.right-main-note {
 		margin-left: 0px;
 	}
 
-	#left-list, #right-list, #left-main-note, #right-main-note {
+	#left-list, #right-list, .left-main-note, .right-main-note {
 		border: none;
 	}
 
@@ -275,7 +275,7 @@ header img {
 		width: 100%;
 	}
 
-	#left-main-note, #right-main-note {
+	.left-main-note, .right-main-note {
 		border-bottom: 1px solid rgb(58, 58, 58);
 		margin-top: 30px;
 	}

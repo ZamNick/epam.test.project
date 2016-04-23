@@ -1,6 +1,6 @@
 'use strict';
 
-const config = require('./config.js');
+import config from './config.js';
 
 class Connector {
 
@@ -12,10 +12,7 @@ class Connector {
 
 		sectionName = sectionName.toLowerCase();
 
-		let url = "http://api.nytimes.com/svc/topstories/v1/"
-			    + sectionName 
-			    + ".json?api-key=" 
-			    + config.APIkey;
+		let url = `http://api.nytimes.com/svc/topstories/v1/${sectionName}.json?api-key=${config.APIkey}`;
 
 		let options = {
 			method: 'GET',

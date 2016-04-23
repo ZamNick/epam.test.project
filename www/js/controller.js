@@ -1,6 +1,7 @@
 'use strict';
 
-const config = require('./config.js');
+import config from './config.js';
+
 const Connector = require('./connector.js');
 
 class Controller {
