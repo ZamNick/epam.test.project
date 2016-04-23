@@ -4,7 +4,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
     context: __dirname + "/www/js",
-	entry: "./app",
+	entry: "./controller",
     output: {
         path: __dirname + "/www/js",        
         filename: "build.js"
