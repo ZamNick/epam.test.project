@@ -9,7 +9,6 @@ class Controller {
 		let sectionsButton = document.getElementById('sections-button');
 		let searchButton = document.getElementById('search-button');
 		let githubButton = document.getElementById('github-button');
-		let sections = document.getElementsByClassName('section-item');
 
 		sectionsButton.addEventListener('click', this.sectionsButtonClickHandler, false);
 		githubButton.addEventListener('click', this.githubButtonClickHandler, false);
@@ -17,8 +16,14 @@ class Controller {
 	}
 
 	sectionsButtonClickHandler() {
-		console.log("Sections button.");
-		Connector.sendRequestToServer("Arts");
+		
+		let seactionsMenu = document.getElementById('sections-menu');
+
+		if("block" === seactionsMenu.style.display) {
+			seactionsMenu.style.display = "none";
+		} else {
+			seactionsMenu.style.display = "block";
+		}
 	}
 
 	githubButtonClickHandler() {

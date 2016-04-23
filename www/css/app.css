@@ -416,3 +416,58 @@ footer img {
 	}
 
 }
+
+
+
+
+
+
+/* SECTION MENU */
+#sections-menu {
+	display: none;
+	position: absolute;
+	height: auto;
+	width: auto;
+	border: 3px solid white;
+	z-index: 2;
+	left: 50%;
+	margin-left: 365px;
+	background-color: black;
+	border-radius: 5px;
+}
+
+#sections-menu li {
+	text-align: center;
+	padding: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+	cursor: default;
+	font-size: 18px;
+}
+
+#sections-menu li:hover {
+	background-color: white;
+	color: black;
+}
+
+#sections-menu-trianle {
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 103px;
+	top: -11px;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid white;
+}
+
+/* Tablet */
+@media (max-width: 999px) {
+
+	#sections-menu {
+		right: 0%;
+		left: auto;
+	}
+
+}
