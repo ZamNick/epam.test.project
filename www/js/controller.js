@@ -47,8 +47,10 @@ class Controller {
 
 	sectionsMenuItemClickHandler() {
 		
-		
-		
+		let section = this.innerHTML;
+
+		Connector.sendRequestToServer(section);
+
 	}
 
 }

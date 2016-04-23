@@ -189,6 +189,11 @@ header img {
 	padding-bottom: 10px;
 }
 
+.main-note-wrapper-image {
+	text-align: center;
+	padding: 3px;
+}
+
 .main-note .abstract {
 	text-align: center;
 }
