@@ -3,6 +3,7 @@
 import config from './config.js';
 
 const Connector = require('./connector.js');
+const Factory = require('./factory.js');
 
 class Controller {
 
@@ -50,8 +51,45 @@ class Controller {
 		
 		let section = this.innerHTML;
 
-		Connector.sendRequestToServer(section);
+		try {
+			Connector.sendRequestToServer(section, Controller.updateDataOnPage);
+		} catch(error) {
+			console.error("Request failed: " + error);
+		}
 
+	}
+
+	static updateDataOnPage(data) {
+
+		let leftList = document.getElementById('left-list');
+		let rightList = document.getElementById('right-list');
+		let mainNotes = document.getElementById('main-notes');
+
+		while(leftList.firstChild) {
+			leftList.removeChild(leftList.firstChild);
+		}
+
+		while(rightList.firstChild) {
+			rightList.removeChild(rightList.firstChild);
+		}
+
+		while(mainNotes.firstChild) {
+			mainNotes.removeChild(mainNotes.firstChild);
+		}
+
+		console.log(data);
+
+		for(let i = 0; i < data.results.length; ++i) {
+			if(i < 4) {
+				mainNotes.innerHTML += Factory.getNote(data.results[i], "main", i);
+			} else {
+				if(i % 2 == 0) {
+					leftList.innerHTML += Factory.getNote(data.results[i], "list");
+				} else {
+					rightList.innerHTML += Factory.getNote(data.results[i], "list");
+				}
+			}
+		}
 	}
 
 }

@@ -4,13 +4,13 @@ class Note {
 
 	static getMainNote(data, odd) {
 
-		let note = `<div class="main-note ${ odd % 2 ? "left-main-note" : "right-main-note"}">
+		let note = `<div class="main-note ${ odd % 2 === 0 ? "left-main-note" : "right-main-note"}">
 						<h2><a href="${ data.url }">${ data.title }</a></h2>
 						<div class="byline">${ data.byline }</div>
 						<div class="main-note-wrapper-image">
-							<img src="${ data.multimedia[1].url }" alt="Photo">
+							<img src="${ "" === data.multimedia ? "" : data.multimedia[1].url }">
 						</div>
-						<div class="credit">${ data.multimedia[1].copyright }</div>
+						<div class="credit">${ "" === data.multimedia ? "" : data.multimedia[1].copyright }</div>
 						<div class="abstract">${ data.abstract }</div>
 					</div>`;
 
@@ -21,7 +21,7 @@ class Note {
 	static getListNote(data) {
 
 		let note = `<div class="list-note">
-						<img src="${ data.multimedia[1].url }" alt="Photo">
+						<img src="${ "" === data.multimedia ? "" : data.multimedia[0].url }">
 						<div class="headline">
 							<h3><a href="${ data.url }">${ data.title }</a></h3>
 						</div>
@@ -35,7 +35,7 @@ class Note {
 
 }
 
-exports = {
+exports.methods = {
 	getMainNote: Note.getMainNote,
 	getListNote: Note.getListNote
 };

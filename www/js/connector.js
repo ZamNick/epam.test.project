@@ -38,10 +38,10 @@ class Connector {
 				return response.json();
 			})
 			.then(function(data) {
-				console.log(data);
+				callback(data);
 			})
 			.catch(function(error) {
-				console.error("Request failed: " + error);
+				throw new Error(error);
 			});
 
 	}
