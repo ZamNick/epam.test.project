@@ -26,7 +26,7 @@ header {
 	margin-left: 5px;
 	font-family: 'Curlz MT';
 }
-#sections {
+#sections-button {
 	padding: 10px;
 	height: 25px;
 	width: 25px;
@@ -34,7 +34,7 @@ header {
 	right: 0px;
 	top: 20px;
 }
-#search {
+#search-button {
 	padding: 10px;
 	height: 25px;
 	width: 25px;
@@ -46,7 +46,7 @@ header img {
 	height: 100%;
 	width: 100%;
 }
-#search:hover, #sections:hover {
+#search-button:hover, #sections-button:hover {
 	background-color: #242424;
 	border-radius: 5px;
 }
@@ -60,11 +60,11 @@ header img {
 		left: 0px;
 	}
 
-	#sections {
+	#sections-button {
 		margin-right: 10px;
 	}
 
-	#search {
+	#search-button {
 		margin-right: 10px;
 	}
 
@@ -83,14 +83,14 @@ header img {
 		margin-left: -105px;
 	}
 
-	#search {
+	#search-button {
 		left: 0px;
 		top: 50%;
 		margin-top: -25px;
 		margin-left: 5px;
 	}
 
-	#sections {
+	#sections-button {
 		top: 50%;
 		margin-top: -25px;
 		margin-right: 5px;
@@ -371,7 +371,7 @@ footer img {
 	padding-bottom: 30px;
 }
 
-#github-logo {
+#github-button {
 	height: 40px;
 	width: 40px;
 	position: absolute;
@@ -381,7 +381,7 @@ footer img {
 	margin-top: 5px;
 }
 
-#github-logo:hover {
+#github-button:hover {
 	background-color: #242424;
 	border-radius: 5px;
 }
@@ -395,7 +395,7 @@ footer img {
 		left: 0px;
 	}
 
-	#github-logo {
+	#github-button {
 		margin-right: 10px;
 	}
 
@@ -409,7 +409,7 @@ footer img {
 		padding-bottom: 10px;
 	}
 
-	#github-logo {
+	#github-button {
 		position: relative;
 		left: 50%;
 		margin-left: -20px;
