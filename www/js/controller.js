@@ -43,7 +43,7 @@ class Controller {
 	}
 
 	githubButtonClickHandler() {
-		location.href = "https://github.com/ZamNick/epam.test.project";
+		location.href = config.GitHubReference;
 	}
 
 
