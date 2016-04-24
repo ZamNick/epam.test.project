@@ -75,6 +75,7 @@ class Controller {
 		let leftList = document.getElementById('left-list');
 		let rightList = document.getElementById('right-list');
 		let sectionName = document.getElementById('section-name');
+		let preloader = document.querySelector('.cssload-loader');
 
 		while(leftList.firstChild) {
 			leftList.removeChild(leftList.firstChild);
@@ -84,12 +85,9 @@ class Controller {
 			rightList.removeChild(rightList.firstChild);
 		}
 
-		let preloader = document.querySelector('.cssload-loader');
+		sectionName.removeChild(sectionName.firstChild);
 
-		preloader.style.display = "none";
-		leftList.style.display = "inline-block";
-		rightList.style.display = "inline-block";
-		sectionName.style.display = "block";
+		sectionName.innerHTML = data.section.charAt(0).toUpperCase() + data.section.slice(1);
 
 		for(let i = 0; i < data.results.length; ++i) {
 			if(i % 2 == 0) {
@@ -98,6 +96,11 @@ class Controller {
 				rightList.innerHTML += Factory.getNote(data.results[i], (i < 4) ? "main" : "list");
 			}
 		}
+
+		preloader.style.display = "none";
+		leftList.style.display = "inline-block";
+		rightList.style.display = "inline-block";
+		sectionName.style.display = "block";
 	}
 
 }
