@@ -94,10 +94,10 @@ class Controller {
 		sectionName.innerHTML = data.section.charAt(0).toUpperCase() + data.section.slice(1);
 
 		for(let i = 0; i < data.results.length; ++i) {
-			if(i % 2 == 0) {
-				leftList.innerHTML += Factory.getNote(data.results[i], (i < 4) ? "main" : "list");
+			if(i % 2 === 0) {
+				leftList.innerHTML += Factory.createNote(data.results[i], (i < 4) ? "main" : "list");
 			} else {
-				rightList.innerHTML += Factory.getNote(data.results[i], (i < 4) ? "main" : "list");
+				rightList.innerHTML += Factory.createNote(data.results[i], (i < 4) ? "main" : "list");
 			}
 		}
 

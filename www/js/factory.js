@@ -4,7 +4,7 @@ const Note = require('./note.js');
 
 class Factory {
 
-	static getNote(data, type) {
+	static createNote(data, type) {
 		if("main" === type) {
 			return Note.methods.getMainNote(data);
 		} else if("list" === type) {
@@ -16,4 +16,4 @@ class Factory {
 
 }
 
-exports.getNote = Factory.getNote;
+exports.createNote = Factory.createNote;
