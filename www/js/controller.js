@@ -55,6 +55,18 @@ class Controller {
 
 		sectionsMenu.style.display = "none";
 
+		let leftList = document.getElementById('left-list');
+		let rightList = document.getElementById('right-list');
+		let sectionName = document.getElementById('section-name');
+
+		leftList.style.display = "none";
+		rightList.style.display = "none";
+		sectionName.style.display = "none";
+
+		let preloader = document.querySelector('.cssload-loader');
+
+		preloader.style.display = "block";
+
 		Connector.sendRequestToServer(section, Controller.updateDataOnPage);
 	}
 
@@ -62,6 +74,7 @@ class Controller {
 
 		let leftList = document.getElementById('left-list');
 		let rightList = document.getElementById('right-list');
+		let sectionName = document.getElementById('section-name');
 
 		while(leftList.firstChild) {
 			leftList.removeChild(leftList.firstChild);
@@ -70,6 +83,13 @@ class Controller {
 		while(rightList.firstChild) {
 			rightList.removeChild(rightList.firstChild);
 		}
+
+		let preloader = document.querySelector('.cssload-loader');
+
+		preloader.style.display = "none";
+		leftList.style.display = "inline-block";
+		rightList.style.display = "inline-block";
+		sectionName.style.display = "block";
 
 		for(let i = 0; i < data.results.length; ++i) {
 			if(i % 2 == 0) {
