@@ -41,7 +41,7 @@ class Connector {
 				callback(data);
 			})
 			.catch(function(error) {
-				throw new Error(error);
+				console.error("Request failed: " + error);
 			});
 
 	}

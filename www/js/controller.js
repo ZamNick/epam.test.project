@@ -55,12 +55,7 @@ class Controller {
 
 		sectionsMenu.style.display = "none";
 
-		try {
-			Connector.sendRequestToServer(section, Controller.updateDataOnPage);
-		} catch(error) {
-			console.error("Request failed: " + error);
-		}
-
+		Connector.sendRequestToServer(section, Controller.updateDataOnPage);
 	}
 
 	static updateDataOnPage(data) {
@@ -75,8 +70,6 @@ class Controller {
 		while(rightList.firstChild) {
 			rightList.removeChild(rightList.firstChild);
 		}
-
-		console.log(data);
 
 		for(let i = 0; i < data.results.length; ++i) {
 			if(i % 2 == 0) {
