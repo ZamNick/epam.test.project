@@ -8,9 +8,9 @@ class Note {
 						<h2><a href="${ data.url }">${ data.title }</a></h2>
 						<div class="byline">${ data.byline }</div>
 						<div class="main-note-wrapper-image">
-							<img src="${ "" === data.multimedia ? "" : data.multimedia[1].url }">
+							<img src="${ "" === data.multimedia ? "" : data.multimedia[3].url }">
 						</div>
-						<div class="credit">${ "" === data.multimedia ? "" : data.multimedia[1].copyright }</div>
+						<div class="credit">${ "" === data.multimedia ? "" : data.multimedia[3].copyright }</div>
 						<div class="abstract">${ data.abstract }</div>
 					</div>`;
 
