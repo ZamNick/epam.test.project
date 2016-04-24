@@ -11,11 +11,11 @@ class Controller {
 		
 		let sectionsButton = document.getElementById('sections-button');
 		let githubButton = document.getElementById('github-button');
+		let sectionsMenuItems = document.getElementById('sections-menu-items');
+		let preloader = document.querySelector('.cssload-loader');
 
 		sectionsButton.addEventListener('click', this.sectionsButtonClickHandler, false);
 		githubButton.addEventListener('click', this.githubButtonClickHandler, false);
-
-		let sectionsMenuItems = document.getElementById('sections-menu-items');
 
 		for(let section of config.sections) {
 
@@ -27,6 +27,10 @@ class Controller {
 
 			sectionsMenuItems.appendChild(li);
 		}
+
+		preloader.style.display = "block";
+
+		Connector.sendRequestToServer("home", Controller.updateDataOnPage);
 
 	}
 
