@@ -63,7 +63,6 @@ class Controller {
 
 		let leftList = document.getElementById('left-list');
 		let rightList = document.getElementById('right-list');
-		let mainNotes = document.getElementById('main-notes');
 
 		while(leftList.firstChild) {
 			leftList.removeChild(leftList.firstChild);
@@ -73,21 +72,13 @@ class Controller {
 			rightList.removeChild(rightList.firstChild);
 		}
 
-		while(mainNotes.firstChild) {
-			mainNotes.removeChild(mainNotes.firstChild);
-		}
-
 		console.log(data);
 
 		for(let i = 0; i < data.results.length; ++i) {
-			if(i < 4) {
-				mainNotes.innerHTML += Factory.getNote(data.results[i], "main", i);
+			if(i % 2 == 0) {
+				leftList.innerHTML += Factory.getNote(data.results[i], (i < 4) ? "main" : "list");
 			} else {
-				if(i % 2 == 0) {
-					leftList.innerHTML += Factory.getNote(data.results[i], "list");
-				} else {
-					rightList.innerHTML += Factory.getNote(data.results[i], "list");
-				}
+				rightList.innerHTML += Factory.getNote(data.results[i], (i < 4) ? "main" : "list");
 			}
 		}
 	}

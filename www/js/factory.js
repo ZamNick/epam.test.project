@@ -4,9 +4,9 @@ const Note = require('./note.js');
 
 class Factory {
 
-	static getNote(data, type, odd) {
+	static getNote(data, type) {
 		if("main" === type) {
-			return Note.methods.getMainNote(data, odd);
+			return Note.methods.getMainNote(data);
 		} else if("list" === type) {
 			return Note.methods.getListNote(data);
 		} else {

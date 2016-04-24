@@ -2,9 +2,9 @@
 
 class Note {
 
-	static getMainNote(data, odd) {
+	static getMainNote(data) {
 
-		let note = `<div class="main-note ${ odd % 2 === 0 ? "left-main-note" : "right-main-note"}">
+		let note = `<div class="main-note">
 						<h2><a href="${ data.url }">${ data.title }</a></h2>
 						<div class="byline">${ data.byline }</div>
 						<div class="main-note-wrapper-image">

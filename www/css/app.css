@@ -162,7 +162,7 @@ header img {
 }
 
 .main-note {
-	width: 499px;
+	width: 100%;
 	border-bottom: 1px solid rgb(58, 58, 58);
 	display: inline-block;
 	padding-bottom: 20px;
@@ -202,6 +202,7 @@ header img {
 	width: 499px;
 	height: auto;
 	display: inline-block;
+	vertical-align: top;
 }
 
 .list-note {
@@ -236,15 +237,6 @@ header img {
 	border-left: 1px solid rgb(58, 58, 58);
 }
 
-.left-main-note {
-	border-right: 1px solid rgb(58, 58, 58);
-}
-
-.right-main-note {
-	margin-left: -1px;
-	border-left: 1px solid rgb(58, 58, 58);
-}
-
 /* Tablet */
 @media (max-width: 999px) {
 
@@ -260,7 +252,7 @@ header img {
 		margin-left: 0px;
 	}
 
-	#left-list, #right-list, .left-main-note, .right-main-note {
+	#left-list, #right-list {
 		border: none;
 	}
 
@@ -273,11 +265,6 @@ header img {
 
 	.main-note {
 		width: 100%;
-	}
-
-	.left-main-note, .right-main-note {
-		border-bottom: 1px solid rgb(58, 58, 58);
-		margin-top: 30px;
 	}
 
 	.list-of-notes {
