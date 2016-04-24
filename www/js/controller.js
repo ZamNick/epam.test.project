@@ -15,7 +15,7 @@ class Controller {
 		sectionsButton.addEventListener('click', this.sectionsButtonClickHandler, false);
 		githubButton.addEventListener('click', this.githubButtonClickHandler, false);
 
-		let sectionsMenu = document.getElementById('sections-menu-items');
+		let sectionsMenuItems = document.getElementById('sections-menu-items');
 
 		for(let section of config.sections) {
 
@@ -25,19 +25,19 @@ class Controller {
 
 			li.addEventListener('click', this.sectionsMenuItemClickHandler, false);
 
-			sectionsMenu.appendChild(li);
+			sectionsMenuItems.appendChild(li);
 		}
 
 	}
 
 	sectionsButtonClickHandler() {
 		
-		let seactionsMenu = document.getElementById('sections-menu');
+		let sectionsMenu = document.getElementById('sections-menu');
 
-		if("block" === seactionsMenu.style.display) {
-			seactionsMenu.style.display = "none";
+		if("block" === sectionsMenu.style.display) {
+			sectionsMenu.style.display = "none";
 		} else {
-			seactionsMenu.style.display = "block";
+			sectionsMenu.style.display = "block";
 		}
 
 	}
@@ -50,6 +50,10 @@ class Controller {
 	sectionsMenuItemClickHandler() {
 		
 		let section = this.innerHTML;
+
+		let sectionsMenu = document.getElementById('sections-menu');
+
+		sectionsMenu.style.display = "none";
 
 		try {
 			Connector.sendRequestToServer(section, Controller.updateDataOnPage);
