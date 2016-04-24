@@ -38,10 +38,16 @@ class Controller {
 		
 		let sectionsMenu = document.getElementById('sections-menu');
 
-		if("block" === sectionsMenu.style.display) {
+		/*if("block" === sectionsMenu.style.display) {
 			sectionsMenu.style.display = "none";
 		} else {
 			sectionsMenu.style.display = "block";
+		}*/
+
+		if("hide" === sectionsMenu.className) {
+			sectionsMenu.className = "show";
+		} else {
+			sectionsMenu.className = "hide";
 		}
 
 	}
@@ -57,7 +63,8 @@ class Controller {
 
 		let sectionsMenu = document.getElementById('sections-menu');
 
-		sectionsMenu.style.display = "none";
+		//sectionsMenu.style.display = "none";
+		sectionsMenu.className = "hide";
 
 		let leftList = document.getElementById('left-list');
 		let rightList = document.getElementById('right-list');
