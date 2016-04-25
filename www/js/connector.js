@@ -6,7 +6,7 @@ class Connector {
 
 	constructor() { }
 
-	static sendRequestToServer(sectionName, callback) {
+	static getTopStories(sectionName, callback) {
 
 		sectionName = sectionName || "home";
 

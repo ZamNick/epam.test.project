@@ -31,7 +31,7 @@ class Controller {
 
 		DOM.get("preloader").show();
 
-		Connector.sendRequestToServer("home", Controller.updateDataOnPage);
+		Connector.getTopStories("home", Controller.updateDataOnPage);
 
 	}
 
@@ -98,7 +98,7 @@ class Controller {
 		DOM.get("section-name").hide();
 		DOM.get("preloader").show();
 
-		Connector.sendRequestToServer(DOM.getHTML(this), Controller.updateDataOnPage);
+		Connector.getTopStories(DOM.getHTML(this), Controller.updateDataOnPage);
 
 		event.stopPropagation();
 	}
