@@ -48,5 +48,4 @@ class Connector {
 
 }
 
-// exports.sendRequestToServer = Connector.sendRequestToServer;
 export default Connector;
