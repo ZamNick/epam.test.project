@@ -12,7 +12,7 @@ class Controller {
 		DOM.get("sections-button").click(this.sectionsButtonClickHandler);
 		DOM.get("github-button").click(this.githubButtonClickHandler);
 
-		let preloader = document.querySelector('.cssload-loader');
+		let preloader = document.querySelector("#preloader");
 
 		for(let section of config.sections) {
 
@@ -56,7 +56,7 @@ class Controller {
 		DOM.get("right-list").hide();
 		DOM.get("section-name").hide();
 
-		let preloader = document.querySelector('.cssload-loader');
+		let preloader = document.querySelector("#preloader");
 
 		preloader.style.display = "block";
 
@@ -69,7 +69,7 @@ class Controller {
 		DOM.get("right-list").clear();
 		DOM.get("section-name").clear().setHTML(data.section.charAt(0).toUpperCase() + data.section.slice(1));
 
-		let preloader = document.querySelector('.cssload-loader');
+		let preloader = document.querySelector("#preloader");
 
 		for(let i = 0; i < data.results.length; ++i) {
 			if(i % 2 === 0) {

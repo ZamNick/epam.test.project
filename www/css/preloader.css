@@ -1,4 +1,4 @@
-.cssload-loader {
+#preloader {
 	display: none;
 	position: relative;
 	top: 20px;
@@ -13,7 +13,7 @@
 	perspective: 1400px;
 }
 
-.cssload-inner {
+.preloader-inner {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -29,7 +29,7 @@
 		-moz-border-radius: 50%;	
 }
 
-.cssload-inner.cssload-one {
+.preloader-inner.preloader-one {
 	left: 0%;
 	top: 0%;
 	animation: cssload-rotate-one 1.15s linear infinite;
@@ -40,7 +40,7 @@
 	border-bottom: 5px solid rgb(255,255,255);
 }
 
-.cssload-inner.cssload-two {
+.preloader-inner.preloader-two {
 	right: 0%;
 	top: 0%;
 	animation: cssload-rotate-two 1.15s linear infinite;
@@ -51,7 +51,7 @@
 	border-right: 5px solid rgb(255,255,255);
 }
 
-.cssload-inner.cssload-three {
+.preloader-inner.preloader-three {
 	right: 0%;
 	bottom: 0%;
 	animation: cssload-rotate-three 1.15s linear infinite;
@@ -64,7 +64,7 @@
 
 @media (max-width: 600px) {
 
-	.cssload-loader {
+	#preloader {
 		top: 10px;
 	}
 
