@@ -12,7 +12,7 @@ class Connector {
 
 		sectionName = sectionName.toLowerCase();
 
-		let url = `http://api.nytimes.com/svc/topstories/v1/${sectionName}.json?api-key=${config.APIkey}`;
+		let url = `http://api.nytimes.com/svc/topstories/v1/${sectionName}.json?api-key=${config.TopStoriesAPIkey}`;
 
 		let options = {
 			method: 'GET',
