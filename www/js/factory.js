@@ -16,4 +16,4 @@ class Factory {
 
 }
 
-exports.createNote = Factory.createNote;
+export default Factory;

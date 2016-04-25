@@ -1,10 +1,8 @@
 'use strict';
 
 import config from './config.js';
-
 import Connector from './connector.js';
-const Factory = require('./factory.js');
-
+import Factory from './factory.js';
 import DOMManipulator from './DOMManipulator.js';
 
 class Controller {
