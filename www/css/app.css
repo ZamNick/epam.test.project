@@ -451,15 +451,18 @@ footer img {
 	color: black;
 }
 
-#sections-menu-trianle {
+.triangle {
 	width: 0;
 	height: 0;
 	position: absolute;
-	left: 474px;
-	top: -10px;
 	border-left: 8px solid transparent;
 	border-right: 8px solid transparent;
 	border-bottom: 8px solid white;
+}
+
+#sections-menu-triangle {
+	left: 474px;
+	top: -10px;
 }
 
 #sections-menu-items {
@@ -488,7 +491,7 @@ footer img {
 		color: white;
 	}
 
-	#sections-menu-trianle {
+	#sections-menu-triangle {
 		display: none;
 	}
 
@@ -575,4 +578,45 @@ footer img {
 	    overflow: hidden;
 	}
 
+}
+
+
+
+#search-menu {
+	position: absolute;
+	width: 200px;
+	left: 50%;
+	z-index: 3;
+	padding-top: 10px;
+	text-align: center;
+	margin-left: 250px;
+	border: 2px solid white;
+	background-color: black;
+	border-radius: 5px;
+}
+
+#search-menu input[type="text"] {
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 2px;
+	outline: none;
+}
+
+#search-go-button {
+	color: white;
+	background-color: black;
+	margin-top: 10px;
+	font-size: 18px;
+	cursor: default;
+	padding: 5px;
+}
+
+#search-go-button:hover {
+	color: black;
+	background-color: white;
+}
+
+#search-menu-triangle {
+	top: -10px;
+	left: 165px;
 }
