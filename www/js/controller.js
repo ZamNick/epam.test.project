@@ -43,13 +43,17 @@ class Controller {
 
 		DOM.get("search-menu").setClass("hide");
 
-		let sectionsMenu = DOM.get("sections-menu");
+		setTimeout(() => {
 
-		if("hide" === sectionsMenu.getClass()) {
-			sectionsMenu.setClass("show");
-		} else {
-			sectionsMenu.setClass("hide");
-		}
+			let sectionsMenu = DOM.get("sections-menu");
+
+			if("hide" === sectionsMenu.getClass()) {
+				sectionsMenu.setClass("show");
+			} else {
+				sectionsMenu.setClass("hide");
+			}
+
+		}, 500);
 
 		event.stopPropagation();
 	}
@@ -58,13 +62,17 @@ class Controller {
 
 		DOM.get("sections-menu").setClass("hide");
 
-		let searchMenu = DOM.get("search-menu");
+		setTimeout(() => {
 
-		if("hide" === searchMenu.getClass()) {
-			searchMenu.setClass("show");
-		} else {
-			searchMenu.setClass("hide");
-		}
+			let searchMenu = DOM.get("search-menu");
+
+			if("hide" === searchMenu.getClass()) {
+				searchMenu.setClass("show");
+			} else {
+				searchMenu.setClass("hide");
+			}
+
+		}, 500);
 
 		event.stopPropagation();
 	}

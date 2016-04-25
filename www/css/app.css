@@ -425,15 +425,14 @@ footer img {
 
 /* SECTION MENU */
 #sections-menu {
-	position: absolute;
+	position: relative;
 	height: auto;
-	width: 500px;
-	border: 2px solid white;
+	width: 1000px;
 	z-index: 2;
 	left: 50%;
-	margin-left: -7px;
-	background-color: black;
-	border-radius: 5px;
+	margin-left: -500px;
+	background-color: transparent;
+	border-bottom: 1px solid rgb(58, 58, 58);
 }
 
 #sections-menu li {
@@ -449,20 +448,6 @@ footer img {
 #sections-menu li:hover {
 	background-color: white;
 	color: black;
-}
-
-.triangle {
-	width: 0;
-	height: 0;
-	position: absolute;
-	border-left: 8px solid transparent;
-	border-right: 8px solid transparent;
-	border-bottom: 8px solid white;
-}
-
-#sections-menu-triangle {
-	left: 474px;
-	top: -10px;
 }
 
 #sections-menu-items {
@@ -520,11 +505,15 @@ footer img {
 
 .hide {
     overflow: hidden;
-    opacity: 0;
-    -moz-transition-duration: 0.3s;
-    -webkit-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -moz-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
     -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
@@ -532,91 +521,55 @@ footer img {
 }
 
 .show {
-	opacity: 1;
-    -moz-transition-duration: 0.3s;
-    -webkit-transition-duration: 0.3s;
-    -o-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -moz-transition-timing-function: ease-in;
-    -webkit-transition-timing-function: ease-in;
-    -o-transition-timing-function: ease-in;
-    transition-timing-function: ease-in;
+    -moz-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -moz-transition-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    max-height: 1000px;
+    overflow: hidden;
 }
-
-
-
-/* Tablet */
-@media (max-width: 999px) {
-
-	.hide {
-	    overflow: hidden;
-	    max-height: 0;
-	    padding-top: 0;
-	    padding-bottom: 0;
-	    margin-top: 0;
-	    margin-bottom: 0;
-	    -moz-transition-duration: 0.5s;
-	    -webkit-transition-duration: 0.5s;
-	    -o-transition-duration: 0.5s;
-	    transition-duration: 0.5s;
-	    -moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-	    -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-	    -o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-	    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-	}
-
-	.show {
-	    -moz-transition-duration: 0.5s;
-	    -webkit-transition-duration: 0.5s;
-	    -o-transition-duration: 0.5s;
-	    transition-duration: 0.5s;
-	    -moz-transition-timing-function: ease-in;
-	    -webkit-transition-timing-function: ease-in;
-	    -o-transition-timing-function: ease-in;
-	    transition-timing-function: ease-in;
-	    max-height: 1000px;
-	    overflow: hidden;
-	}
-
-}
-
 
 
 #search-menu {
-	position: absolute;
-	width: 200px;
+	position: relative;
+	height: auto;
+	width: 1000px;
 	left: 50%;
-	z-index: 3;
-	padding-top: 10px;
+	z-index: 2;
+	margin-left: -500px;
 	text-align: center;
-	margin-left: 250px;
-	border: 2px solid white;
-	background-color: black;
-	border-radius: 5px;
+	background-color: transparent;
+	vertical-align: middle;
 }
 
 #search-menu input[type="text"] {
 	padding-top: 3px;
 	padding-bottom: 3px;
 	padding-left: 2px;
+	width: 500px;
 	outline: none;
+	display: inline-block;
 }
 
 #search-go-button {
 	color: white;
-	background-color: black;
-	margin-top: 10px;
+	background-color: transparent;
 	font-size: 18px;
 	cursor: default;
-	padding: 5px;
+	padding: 8px;
+	width: 150px;
+	border: 1px solid rgb(58, 58, 58);
+	border-radius: 5px;
+	display: inline-block;
+	margin-left: 35px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #search-go-button:hover {
-	color: black;
-	background-color: white;
-}
-
-#search-menu-triangle {
-	top: -10px;
-	left: 165px;
+	background-color: #242424;
 }
