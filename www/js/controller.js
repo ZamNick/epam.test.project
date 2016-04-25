@@ -9,7 +9,7 @@ class Controller {
 
 	constructor() {
 
-		document.body.addEventListener('click', this.bodyClickHandler, false);
+		DOM.getBody().click(this.bodyClickHandler);
 
 		DOM.get("sections-button").click(this.sectionsButtonClickHandler);
 		DOM.get("github-button").click(this.githubButtonClickHandler);

@@ -14,6 +14,11 @@ let DOMManipulator = (function() {
 			return _currentElement;
 		},
 
+		getBody: function() {
+			_currentElement = document.body;
+			return this;
+		},
+
 		click: function(handler) {
 			_currentElement.addEventListener('click', handler, false);
 			return this;
