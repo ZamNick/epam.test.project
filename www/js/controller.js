@@ -14,6 +14,9 @@ class Controller {
 		DOM.get("sections-button").click(this.sectionsButtonClickHandler);
 		DOM.get("search-button").click(this.searchButtonClickHandler);
 		DOM.get("github-button").click(this.githubButtonClickHandler);
+		DOM.get("search-go-button").click(this.searchGoButtonClickHandler);
+
+		DOM.get("search-line").click((event) => { event.stopPropagation(); });
 
 		for(let section of config.sections) {
 
@@ -96,6 +99,13 @@ class Controller {
 		DOM.get("preloader").show();
 
 		Connector.sendRequestToServer(DOM.getHTML(this), Controller.updateDataOnPage);
+
+		event.stopPropagation();
+	}
+	
+
+	searchGoButtonClickHandler(event) {
+
 
 		event.stopPropagation();
 	}
