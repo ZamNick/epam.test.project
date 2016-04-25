@@ -12,8 +12,6 @@ class Controller {
 		DOM.get("sections-button").click(this.sectionsButtonClickHandler);
 		DOM.get("github-button").click(this.githubButtonClickHandler);
 
-		let preloader = document.querySelector("#preloader");
-
 		for(let section of config.sections) {
 
 			let element = DOM
@@ -25,7 +23,7 @@ class Controller {
 			DOM.get("sections-menu-items").append(element);
 		}
 
-		preloader.style.display = "block";
+		DOM.get("preloader").show();
 
 		Connector.sendRequestToServer("home", Controller.updateDataOnPage);
 
@@ -55,10 +53,7 @@ class Controller {
 		DOM.get("left-list").hide();
 		DOM.get("right-list").hide();
 		DOM.get("section-name").hide();
-
-		let preloader = document.querySelector("#preloader");
-
-		preloader.style.display = "block";
+		DOM.get("preloader").show();
 
 		Connector.sendRequestToServer(DOM.getHTML(this), Controller.updateDataOnPage);
 	}
@@ -69,8 +64,6 @@ class Controller {
 		DOM.get("right-list").clear();
 		DOM.get("section-name").clear().setHTML(data.section.charAt(0).toUpperCase() + data.section.slice(1));
 
-		let preloader = document.querySelector("#preloader");
-
 		for(let i = 0; i < data.results.length; ++i) {
 			if(i % 2 === 0) {
 				DOM.get("left-list").appendHTML(Factory.createNote(data.results[i], (i < 4) ? "main" : "list"));
@@ -79,8 +72,7 @@ class Controller {
 			}
 		}
 
-		preloader.style.display = "none";
-
+		DOM.get("preloader").hide();
 		DOM.get("left-list").show();
 		DOM.get("right-list").show();
 		DOM.get("section-name").show();
