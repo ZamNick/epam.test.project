@@ -170,6 +170,8 @@ header img {
 }
 
 .main-note h2 {
+	padding-left: 5px;
+	padding-right: 5px;
 	text-align: center;
 }
 
@@ -196,6 +198,8 @@ header img {
 }
 
 .main-note .abstract {
+	padding-left: 5px;
+	padding-right: 5px;
 	text-align: center;
 }
 
