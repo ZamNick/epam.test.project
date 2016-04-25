@@ -9,6 +9,8 @@ class Controller {
 
 	constructor() {
 
+		document.body.addEventListener('click', this.bodyClickHandler, false);
+
 		DOM.get("sections-button").click(this.sectionsButtonClickHandler);
 		DOM.get("github-button").click(this.githubButtonClickHandler);
 
@@ -29,7 +31,13 @@ class Controller {
 
 	}
 
-	sectionsButtonClickHandler() {
+	bodyClickHandler() {
+
+		DOM.get("sections-menu").setClass("hide");
+
+	}
+
+	sectionsButtonClickHandler(event) {
 
 		let sectionsMenu = DOM.get("sections-menu");
 
@@ -39,6 +47,8 @@ class Controller {
 			sectionsMenu.setClass("hide");
 		}
 
+		// Prevent bubbling.
+		event.stopPropagation();
 	}
 
 	githubButtonClickHandler() {
@@ -46,7 +56,7 @@ class Controller {
 	}
 
 
-	sectionsMenuItemClickHandler() {
+	sectionsMenuItemClickHandler(event) {
 
 		DOM.get("sections-menu").setClass("hide");
 
@@ -56,6 +66,9 @@ class Controller {
 		DOM.get("preloader").show();
 
 		Connector.sendRequestToServer(DOM.getHTML(this), Controller.updateDataOnPage);
+
+		// Prevent bubbling.
+		event.stopPropagation();
 	}
 
 	static updateDataOnPage(data) {
