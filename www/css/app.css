@@ -4,11 +4,13 @@
 }
 body {
 	background-image: url(../img/wp.jpg);
+	height: 100%;
+	width: 100%;
 }
 header {
 	height: 70px;
 	width: 100%;
-	margin-top: 20px;
+	padding-top: 20px;
 }
 #wrapper-header {
 	position: relative;
