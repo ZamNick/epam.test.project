@@ -543,7 +543,6 @@ footer img {
 	margin-left: -500px;
 	text-align: center;
 	background-color: transparent;
-	vertical-align: middle;
 }
 
 #search-menu input[type="text"] {
@@ -572,4 +571,44 @@ footer img {
 
 #search-go-button:hover {
 	background-color: #242424;
+}
+
+/* Tablet */
+@media (max-width: 999px) {
+
+	#search-menu {
+		width: 100%;
+		left: 0px;
+		margin-left: 0px;
+	}
+
+	#search-menu input[type="text"] {
+		width: 350px;
+	}
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+	#search-menu {
+		margin-top: -20px;
+		margin-bottom: 20px;
+	}
+
+	#search-menu input[type="text"] {
+		display: block;
+		margin-top: 15px;
+		width: 90%;
+		position: relative;
+		left: 4%;
+	}
+
+	#search-go-button {
+		display: block;
+		margin-left: -84px;
+		position: relative;
+		left: 50%;
+	}
+
 }
