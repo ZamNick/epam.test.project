@@ -12,6 +12,7 @@ class Controller {
 		DOM.getBody().click(this.bodyClickHandler);
 
 		DOM.get("sections-button").click(this.sectionsButtonClickHandler);
+		DOM.get("search-button").click(this.searchButtonClickHandler);
 		DOM.get("github-button").click(this.githubButtonClickHandler);
 
 		for(let section of config.sections) {
@@ -34,10 +35,13 @@ class Controller {
 	bodyClickHandler() {
 
 		DOM.get("sections-menu").setClass("hide");
+		DOM.get("search-menu").setClass("hide");
 
 	}
 
 	sectionsButtonClickHandler(event) {
+
+		DOM.get("search-menu").setClass("hide");
 
 		let sectionsMenu = DOM.get("sections-menu");
 
@@ -47,7 +51,21 @@ class Controller {
 			sectionsMenu.setClass("hide");
 		}
 
-		// Prevent bubbling.
+		event.stopPropagation();
+	}
+
+	searchButtonClickHandler(event) {
+
+		DOM.get("sections-menu").setClass("hide");
+
+		let searchMenu = DOM.get("search-menu");
+
+		if("hide" === searchMenu.getClass()) {
+			searchMenu.setClass("show");
+		} else {
+			searchMenu.setClass("hide");
+		}
+
 		event.stopPropagation();
 	}
 
@@ -67,7 +85,6 @@ class Controller {
 
 		Connector.sendRequestToServer(DOM.getHTML(this), Controller.updateDataOnPage);
 
-		// Prevent bubbling.
 		event.stopPropagation();
 	}
 
