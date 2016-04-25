@@ -76,6 +76,15 @@ let DOMManipulator = (function() {
 		append: function(child) {
 			_currentElement.appendChild(child);
 			return this;
+		},
+
+		toggle: function() {
+			if("hide" === _currentElement.className) {
+				_currentElement.className = "show";
+			} else {
+				_currentElement.className = "hide";
+			}
+			return this;
 		}
 	}
 

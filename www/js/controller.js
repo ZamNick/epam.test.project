@@ -41,38 +41,42 @@ class Controller {
 
 	sectionsButtonClickHandler(event) {
 
-		DOM.get("search-menu").setClass("hide");
+		if("show" === DOM.get("search-menu").getClass()) {
 
-		setTimeout(() => {
+			DOM.get("search-menu").setClass("hide");
 
-			let sectionsMenu = DOM.get("sections-menu");
+			setTimeout(() => {
 
-			if("hide" === sectionsMenu.getClass()) {
-				sectionsMenu.setClass("show");
-			} else {
-				sectionsMenu.setClass("hide");
-			}
+				DOM.get("sections-menu").toggle();
 
-		}, 500);
+			}, 500);
+
+		} else {
+
+			DOM.get("sections-menu").toggle();
+
+		}
 
 		event.stopPropagation();
 	}
 
 	searchButtonClickHandler(event) {
 
-		DOM.get("sections-menu").setClass("hide");
+		if("show" === DOM.get("sections-menu").getClass()) {
 
-		setTimeout(() => {
+			DOM.get("sections-menu").setClass("hide");
 
-			let searchMenu = DOM.get("search-menu");
+			setTimeout(() => {
 
-			if("hide" === searchMenu.getClass()) {
-				searchMenu.setClass("show");
-			} else {
-				searchMenu.setClass("hide");
-			}
+				DOM.get("search-menu").toggle();
 
-		}, 500);
+			}, 500);
+
+		} else {
+
+			DOM.get("search-menu").toggle();
+
+		}
 
 		event.stopPropagation();
 	}
