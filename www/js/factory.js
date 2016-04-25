@@ -1,14 +1,14 @@
 'use strict';
 
-const Note = require('./note.js');
+import Note from './note.js';
 
 class Factory {
 
 	static createNote(data, type) {
 		if("main" === type) {
-			return Note.methods.getMainNote(data);
+			return Note.getMainNote(data);
 		} else if("list" === type) {
-			return Note.methods.getListNote(data);
+			return Note.getListNote(data);
 		} else {
 			throw new Error("Unknow type of note.");
 		}

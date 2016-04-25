@@ -37,7 +37,4 @@ class Note {
 
 }
 
-exports.methods = {
-	getMainNote: Note.getMainNote,
-	getListNote: Note.getListNote
-};
+export default Note;
