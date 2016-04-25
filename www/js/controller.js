@@ -2,8 +2,10 @@
 
 import config from './config.js';
 
-const Connector = require('./connector.js');
+import Connector from './connector.js';
 const Factory = require('./factory.js');
+
+import DOMManipulator from './DOMManipulator.js';
 
 class Controller {
 
