@@ -1,58 +1,79 @@
 'use strict';
 
-class DOMManipulator {
+let DOMManipulator = (function() {
 
-	constructor() { }
+	let _currentElement;
 
-	get(id) {
-		return document.getElementById(id);
-	}
+	return {
+		get: function(id) {
+			_currentElement = document.getElementById(id);
+			return this;
+		},
 
-	click(element, handler) {
-		element.addEventListener('click', handler, false);
-	}
+		getElement: function() {
+			return _currentElement;
+		},
 
-	create(tagname) {
-		return document.createElement(tagname);
-	}
+		click: function(handler) {
+			_currentElement.addEventListener('click', handler, false);
+			return this;
+		},
 
-	clear(element) {
-		while(element.firstChild) {
-			element.removeChild(element.firstChild);
+		create: function(tagname) {
+			_currentElement = document.createElement(tagname);
+			return this;
+		},
+
+		clear: function() {
+			while(_currentElement.firstChild) {
+				_currentElement.removeChild(_currentElement.firstChild);
+			}
+			return this;
+		},
+
+		getClass: function() {
+			return _currentElement.className;
+		},
+
+		setClass: function(classname) {
+			_currentElement.className = classname;
+			return this;
+		},
+
+		setHTML: function(html) {
+			_currentElement.innerHTML = html;
+			return this;
+		},
+
+		getHTML: function(element) {
+			return element.innerHTML;
+		},
+
+		appendHTML: function(html) {
+			_currentElement.innerHTML += html;
+			return this;
+		},
+
+		show: function() {
+			if("list-of-notes" === _currentElement.className) {
+				_currentElement.style.display = "inline-block";
+			} else {
+				_currentElement.style.display = "block";
+			}
+			return this;
+		},
+
+		hide: function() {
+			_currentElement.style.display = "none";
+			return this;
+		},
+
+		append: function(child) {
+			_currentElement.appendChild(child);
+			return this;
 		}
 	}
 
-	getClass(element) {
-		return element.className;
-	}
+})();
 
-	setClass(element, classname) {
-		element.className = classname;
-	}
-
-	setHTML(element, html) {
-		element.innerHTML = html;
-	}
-
-	appendHTML(element, html) {
-		element.innerHTML += html;
-	}
-
-	show(element) {
-		if("list-of-notes" === getClass(element)) {
-			element.style.display = "inline-block";
-		} else {
-			element.style.display = "block";
-		}
-	}
-
-	hide(element) {
-		element.style.display = "none";
-	}
-
-	append(parent, child) {
-		parent.appendChild(child);
-	}
-}
-
-export default DOMManipulator;
+export { DOMManipulator as DOM };
