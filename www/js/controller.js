@@ -31,7 +31,7 @@ class Controller {
 
 		DOM.get("preloader").show();
 
-		Connector.getTopStories("home", Controller.updateDataOnPage);
+		Connector.getTopStories("home", Controller.updateTopStories);
 
 	}
 
@@ -98,7 +98,7 @@ class Controller {
 		DOM.get("section-name").hide();
 		DOM.get("preloader").show();
 
-		Connector.getTopStories(DOM.getHTML(this), Controller.updateDataOnPage);
+		Connector.getTopStories(DOM.getHTML(this), Controller.updateTopStories);
 
 		event.stopPropagation();
 	}
@@ -106,11 +106,17 @@ class Controller {
 
 	searchGoButtonClickHandler(event) {
 
+		DOM.get("left-list").hide();
+		DOM.get("right-list").hide();
+		DOM.get("section-name").hide();
+		DOM.get("preloader").show();
+
+		Connector.sendQuery(DOM.get("search-line").getElement().value, Controller.updateDataOnPage);
 
 		event.stopPropagation();
 	}
 
-	static updateDataOnPage(data) {
+	static updateTopStories(data) {
 
 		DOM.get("left-list").clear();
 		DOM.get("right-list").clear();
@@ -128,6 +134,14 @@ class Controller {
 		DOM.get("left-list").show();
 		DOM.get("right-list").show();
 		DOM.get("section-name").show();
+	}
+
+	static updateSearches(data) {
+
+		DOM.get("left-list").clear();
+		DOM.get("right-list").clear();
+
+		
 	}
 
 }
