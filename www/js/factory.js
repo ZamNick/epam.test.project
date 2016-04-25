@@ -9,6 +9,8 @@ class Factory {
 			return Note.getMainNote(data);
 		} else if("list" === type) {
 			return Note.getListNote(data);
+		} else if("search" === type) {
+			return Note.getSearchNote(data);
 		} else {
 			throw new Error("Unknow type of note.");
 		}

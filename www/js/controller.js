@@ -111,7 +111,7 @@ class Controller {
 		DOM.get("section-name").hide();
 		DOM.get("preloader").show();
 
-		Connector.sendQuery(DOM.get("search-line").getElement().value, Controller.updateDataOnPage);
+		Connector.sendQuery(DOM.get("search-line").getElement().value, Controller.updateSearches);
 
 		event.stopPropagation();
 	}
@@ -141,6 +141,17 @@ class Controller {
 		DOM.get("left-list").clear();
 		DOM.get("right-list").clear();
 
+		for(let i = 0; i < data.response.docs.length; ++i) {
+			if(i % 2 === 0) {
+				DOM.get("left-list").appendHTML(Factory.createNote(data.response.docs[i], "search"));
+			} else {
+				DOM.get("right-list").appendHTML(Factory.createNote(data.response.docs[i], "search"));
+			}
+		}
+
+		DOM.get("preloader").hide();
+		DOM.get("left-list").show();
+		DOM.get("right-list").show();
 		
 	}
 

@@ -35,6 +35,21 @@ class Note {
 
 	}
 
+	static getSearchNote(data) {
+
+		let note = `<div class="list-note">
+						<img src="${ 0 === data.multimedia.length ? "" : ("http://static01.nyt.com/" + data.multimedia[0].url) }">
+						<div class="headline">
+							<h3><a href="${ data.web_url }">${ data.headline.main }</a></h3>
+						</div>
+						<div class="byline">${ null === data.byline ? "" : data.byline.original }</div>
+						<div class="abstract">${ data.snippet }</div>
+					</div>`;
+
+		return note;
+
+	}
+
 }
 
 export default Note;
