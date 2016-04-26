@@ -4,8 +4,6 @@ import config from './config.js';
 
 class Connector {
 
-	constructor() { }
-
 	static getTopStories(sectionName, callback) {
 
 		sectionName = sectionName || "home";
@@ -22,31 +20,11 @@ class Connector {
 			mode: 'cors'
 		};
 
-
-		fetch(url, options)
-			.then(function(response) {
-				if(response.status >= 200 && response.status < 300) {
-					return response;
-				} else {
-					
-					let error = new Error(response.statusText);
-					error.response = response;
-					throw error;
-				}
-			})
-			.then(function(response) {
-				return response.json();
-			})
-			.then(function(data) {
-				callback(data);
-			})
-			.catch(function(error) {
-				console.error("Request failed: " + error);
-			});
+		Connector.sendRequest(url, options, callback);
 
 	}
 
-	static sendQuery(query, page, callback) {
+	static searchQuery(query, page, callback) {
 
 		let url = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&page=${page}&api-key=${config.ArticleSearchAPIkey}`;
 
@@ -58,6 +36,12 @@ class Connector {
 			mode: 'cors'
 		};
 
+		Connector.sendRequest(url, options, callback);
+			
+	}
+
+	static sendRequest(url, options, callback) {
+
 		fetch(url, options)
 			.then(function(response) {
 				if(response.status >= 200 && response.status < 300) {
@@ -78,7 +62,7 @@ class Connector {
 			.catch(function(error) {
 				console.error("Request failed: " + error);
 			});
-			
+
 	}
 
 }
