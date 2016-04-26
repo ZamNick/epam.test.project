@@ -98,6 +98,11 @@ class Controller {
 		DOM.get("left-list").hide();
 		DOM.get("right-list").hide();
 		DOM.get("section-name").hide();
+
+		DOM.get("paging-menu").hide();
+		DOM.get("current-page").setHTML(1);
+		DOM.get("previous-page-button").setClass("disabled");
+
 		DOM.get("preloader").show();
 
 		Connector.getTopStories(DOM.getHTML(this), Controller.updateTopStories);
@@ -111,6 +116,10 @@ class Controller {
 		DOM.get("left-list").hide();
 		DOM.get("right-list").hide();
 		DOM.get("section-name").hide();
+
+		DOM.get("current-page").setHTML(1);
+		DOM.get("previous-page-button").setClass("disabled");
+		
 		DOM.get("preloader").show();
 
 		Connector.sendQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
