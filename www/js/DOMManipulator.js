@@ -51,6 +51,7 @@ let DOMManipulator = (function() {
 		},
 
 		getHTML: function(element) {
+			element = element || _currentElement;
 			return element.innerHTML;
 		},
 

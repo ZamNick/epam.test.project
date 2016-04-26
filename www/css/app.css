@@ -642,6 +642,10 @@ footer img {
 	padding-right: 10px;
 }
 
+#previous-page-button {
+	display: none;
+}
+
 #previous-page-button:hover, #next-page-button:hover {
 	background-color: #242424;
 }

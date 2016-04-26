@@ -15,6 +15,8 @@ class Controller {
 		DOM.get("search-button").click(this.searchButtonClickHandler);
 		DOM.get("github-button").click(this.githubButtonClickHandler);
 		DOM.get("search-go-button").click(this.searchGoButtonClickHandler);
+		DOM.get("previous-page-button").click(this.previousPageButtonClickHandler);
+		DOM.get("next-page-button").click(this.nextPageButtonClickHandler);
 
 		DOM.get("search-line").click((event) => { event.stopPropagation(); });
 
@@ -111,7 +113,7 @@ class Controller {
 		DOM.get("section-name").hide();
 		DOM.get("preloader").show();
 
-		Connector.sendQuery(DOM.get("search-line").getElement().value, Controller.updateSearches);
+		Connector.sendQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
 
 		event.stopPropagation();
 	}
@@ -152,7 +154,46 @@ class Controller {
 		DOM.get("preloader").hide();
 		DOM.get("left-list").show();
 		DOM.get("right-list").show();
-		
+
+		DOM.get("paging-menu").show();
+	}
+
+	previousPageButtonClickHandler(event) {
+
+		let page = +DOM.get("current-page").getHTML();
+
+		page = page - 1;
+
+		if(1 === page) {
+			DOM.get("previous-page-button").getElement().style.display = 'none';
+		}
+
+		DOM.get("current-page").setHTML(page);
+		Connector.sendQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
+
+		DOM.get("left-list").hide();
+		DOM.get("right-list").hide();
+		DOM.get("preloader").show();
+
+		event.stopPropagation();
+	}
+
+	nextPageButtonClickHandler(event) {
+
+		let page = +DOM.get("current-page").getHTML();
+
+		page = page + 1;
+
+		DOM.get("previous-page-button").getElement().style.display = 'inline-block';
+		DOM.get("current-page").setHTML(page);
+
+		Connector.sendQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
+
+		DOM.get("left-list").hide();
+		DOM.get("right-list").hide();
+		DOM.get("preloader").show();
+
+		event.stopPropagation();
 	}
 
 }

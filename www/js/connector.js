@@ -46,9 +46,9 @@ class Connector {
 
 	}
 
-	static sendQuery(query, callback) {
+	static sendQuery(query, page, callback) {
 
-		let url = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=${config.ArticleSearchAPIkey}`;
+		let url = `http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&page=${page}&api-key=${config.ArticleSearchAPIkey}`;
 
 		let options = {
 			method: 'GET',
