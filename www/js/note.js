@@ -37,8 +37,10 @@ class Note {
 
 	static getSearchNote(data) {
 
-		let note = `<div class="list-note">
-						<img src="${ 0 === data.multimedia.length ? "" : ("http://static01.nyt.com/" + data.multimedia[0].url) }">
+		let img = (0 !== data.multimedia.length) ? `style="min-height: 150px;">
+						<img src="${("http://static01.nyt.com/" + data.multimedia[0].url)}" style="height: 130px; width: 190px;">` : `>`;
+
+		let note = `<div class="list-note"${ img }
 						<div class="headline">
 							<h3><a href="${ data.web_url }">${ data.headline.main }</a></h3>
 						</div>
