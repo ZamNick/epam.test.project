@@ -36,9 +36,6 @@ class Connector {
 
 		let options = {
 			method: 'GET',
-			headers: {
-				'Content-Type': 'text/plain'
-			},
 			mode: 'cors'
 		};
 
@@ -65,9 +62,6 @@ class Connector {
 
 		let options = {
 			method: 'GET',
-			headers: {
-				'Content-Type': 'text/plain'
-			},
 			mode: 'cors'
 		};
 
