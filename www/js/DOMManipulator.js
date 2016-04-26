@@ -86,6 +86,20 @@ let DOMManipulator = (function() {
 				_currentElement.className = "hide";
 			}
 			return this;
+		},
+
+		attr: function(attribute, value) {
+			if(undefined === value) {
+				return _currentElement.getAttribute(attribute);
+			} else {
+				_currentElement.setAttribute(attribute, value);
+				return this;
+			}
+		},
+
+		keypress: function(handler) {
+			_currentElement.addEventListener('keypress', handler, false);
+			return this;
 		}
 	}
 

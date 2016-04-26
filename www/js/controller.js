@@ -19,6 +19,7 @@ class Controller {
 		DOM.get("next-page-button").click(this.nextPageButtonClickHandler);
 
 		DOM.get("search-line").click((event) => { event.stopPropagation(); });
+		DOM.get("search-line").keypress(this.searchLineKeyPressHandler);
 
 		for(let section of config.sections) {
 
@@ -34,6 +35,29 @@ class Controller {
 		DOM.get("preloader").show();
 
 		Connector.getTopStories("home", Controller.updateTopStories);
+
+	}
+
+	searchLineKeyPressHandler(event) {
+
+		DOM.get("search-line").attr('pure', "false");
+
+		if(13 === event.keyCode) {
+
+			DOM.get("left-list").hide();
+			DOM.get("right-list").hide();
+			DOM.get("section-name").hide();
+
+			DOM.get("current-page").setHTML(1);
+			DOM.get("previous-page-button").setClass("disabled");
+			
+			DOM.get("preloader").show();
+
+			DOM.get("search-line").attr('pure', "true");
+
+			Connector.sendQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
+
+		}
 
 	}
 
@@ -122,6 +146,8 @@ class Controller {
 		
 		DOM.get("preloader").show();
 
+		DOM.get("search-line").attr('pure', "true");
+
 		Connector.sendQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
 
 		event.stopPropagation();
@@ -169,38 +195,72 @@ class Controller {
 
 	previousPageButtonClickHandler(event) {
 
-		let page = +DOM.get("current-page").getHTML();
+		if("false" === DOM.get("search-line").attr("pure")) {
 
-		page = page - 1;
+			DOM.get("search-line").attr("pure", "true");
 
-		if(1 === page) {
+			DOM.get("current-page").setHTML(1);
 			DOM.get("previous-page-button").setClass("disabled");
+
+			Connector.sendQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
+
+			DOM.get("left-list").hide();
+			DOM.get("right-list").hide();
+			DOM.get("preloader").show();
+
+		} else {
+
+			let page = +DOM.get("current-page").getHTML();
+
+			page = page - 1;
+
+			if(1 === page) {
+				DOM.get("previous-page-button").setClass("disabled");
+			}
+
+			DOM.get("current-page").setHTML(page);
+			Connector.sendQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
+
+			DOM.get("left-list").hide();
+			DOM.get("right-list").hide();
+			DOM.get("preloader").show();
+
 		}
-
-		DOM.get("current-page").setHTML(page);
-		Connector.sendQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
-
-		DOM.get("left-list").hide();
-		DOM.get("right-list").hide();
-		DOM.get("preloader").show();
 
 		event.stopPropagation();
 	}
 
 	nextPageButtonClickHandler(event) {
 
-		let page = +DOM.get("current-page").getHTML();
+		if("false" === DOM.get("search-line").attr("pure")) {
 
-		page = page + 1;
+			DOM.get("search-line").attr("pure", "true");
 
-		DOM.get("previous-page-button").setClass("");
-		DOM.get("current-page").setHTML(page);
+			DOM.get("current-page").setHTML(1);
+			DOM.get("previous-page-button").setClass("disabled");
 
-		Connector.sendQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
+			Connector.sendQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
 
-		DOM.get("left-list").hide();
-		DOM.get("right-list").hide();
-		DOM.get("preloader").show();
+			DOM.get("left-list").hide();
+			DOM.get("right-list").hide();
+			DOM.get("preloader").show();
+
+		} else {
+
+			let page = +DOM.get("current-page").getHTML();
+
+			page = page + 1;
+
+			DOM.get("previous-page-button").setClass("");
+			DOM.get("current-page").setHTML(page);
+
+			Connector.sendQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
+
+			DOM.get("left-list").hide();
+			DOM.get("right-list").hide();
+			DOM.get("preloader").show();
+
+		}
 
 		event.stopPropagation();
 	}
