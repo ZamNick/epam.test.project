@@ -612,3 +612,40 @@ footer img {
 	}
 
 }
+
+
+
+
+#paging-menu {
+	width: 100%;
+	height: auto;
+	display: none;
+}
+
+#wrapper-paging-menu {
+	width: 1000px;
+	position: relative;
+	height: auto;
+	left: 50%;
+	margin-left: -500px;
+	border-top: 1px solid rgb(58, 58, 58);
+	color: white;
+	cursor: default;
+	text-align: center;
+	font-size: 18px;
+}
+
+#previous-page-button, #next-page-button {
+	display: inline-block;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#previous-page-button:hover, #next-page-button:hover {
+	background-color: #242424;
+}
+
+#current-page {
+	display: inline-block;
+}
