@@ -652,6 +652,18 @@ footer img {
 	padding-right: 3px;
 }
 
+/* Tablet */
+@media (max-width: 999px) {
+
+	#wrapper-paging-menu {
+		width: 100%;
+		left: 0px;
+		margin-left: 0px;
+	}
+
+}
+
+
 
 .disabled {
     pointer-events: none;
