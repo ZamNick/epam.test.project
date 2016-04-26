@@ -71,19 +71,12 @@ class Controller {
 	sectionsButtonClickHandler(event) {
 
 		if("show" === DOM.get("search-menu").getClass()) {
-
 			DOM.get("search-menu").setClass("hide");
-
 			setTimeout(() => {
-
 				DOM.get("sections-menu").toggle();
-
 			}, 500);
-
 		} else {
-
 			DOM.get("sections-menu").toggle();
-
 		}
 
 		event.stopPropagation();
@@ -92,19 +85,12 @@ class Controller {
 	searchButtonClickHandler(event) {
 
 		if("show" === DOM.get("sections-menu").getClass()) {
-
 			DOM.get("sections-menu").setClass("hide");
-
 			setTimeout(() => {
-
 				DOM.get("search-menu").toggle();
-
 			}, 500);
-
 		} else {
-
 			DOM.get("search-menu").toggle();
-
 		}
 
 		event.stopPropagation();
