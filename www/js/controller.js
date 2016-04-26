@@ -165,7 +165,7 @@ class Controller {
 		page = page - 1;
 
 		if(1 === page) {
-			DOM.get("previous-page-button").getElement().style.display = 'none';
+			DOM.get("previous-page-button").setClass("disabled");
 		}
 
 		DOM.get("current-page").setHTML(page);
@@ -184,7 +184,7 @@ class Controller {
 
 		page = page + 1;
 
-		DOM.get("previous-page-button").getElement().style.display = 'inline-block';
+		DOM.get("previous-page-button").setClass("");
 		DOM.get("current-page").setHTML(page);
 
 		Connector.sendQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
