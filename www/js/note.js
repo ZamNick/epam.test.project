@@ -34,6 +34,7 @@ class Note {
 		return note;
 
 	}
+
 	static getSearchNote(data) {
 
 		let img = (0 !== data.multimedia.length) ? `style="min-height: 150px;">
