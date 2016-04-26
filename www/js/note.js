@@ -1,7 +1,35 @@
 'use strict';
 
+
+/**
+ * A class represent an instance of note
+ * that display on user monitor and contain
+ * news data from some news section.
+ * @class
+ * 
+ * @author Nikolay Zamulov <zamulov8@gmail.com> 
+ */
 class Note {
 
+
+
+	/**
+	 * Function create a main note that represented on web-site
+	 * like a note with big size image and this note corresponding 
+	 * for more important news.
+	 * 
+	 * @function
+	 * @param {Object} data - The news metadata.
+	 * @param {Array} data.multimedia - Container of multimedia data.
+	 * @param {String} data.multimedia[].url - Remote address of current one news image.
+	 * @param {String} data.multimedia[].copyright - The author of current one news image.
+	 * @param {String} data.url - Remote address of corresponding article on main site.
+	 * @param {String} data.title - Title of current one news.
+	 * @param {String} data.byline - The author of current one news.
+	 * @param {String} data.abstract - Short article story of current one news.
+	 * @static
+	 * @returns {String} - HTML code of current one news for adding it into web-site content.
+	 */
 	static getMainNote(data) {
 
 		let img = ("" !== data.multimedia) ?	`<div class="main-note-wrapper-image">
@@ -20,6 +48,25 @@ class Note {
 
 	}
 
+
+
+	/**
+	 * Function create a list note that represented on web-site
+	 * like a note with small size image and that note contains into
+	 * left or right list of notes. This note corresponding
+	 * for secondary news.
+	 *
+	 * @function
+	 * @param {Object} data - The news metadata.
+	 * @param {Array} data.multimedia - Container of multimedia data.
+	 * @param {String} data.multimedia[].url - Remote address of current one news image.
+	 * @param {String} data.url - Remote address of corresponding article on main site.
+	 * @param {String} data.title - Title of current one news.
+	 * @param {String} data.byline - The author of current one news.
+	 * @param {String} data.abstract - Short article story of current one news.
+	 * @static
+	 * @returns {String} - HTML code of current one news for adding it into web-site content.
+	 */
 	static getListNote(data) {
 
 		let note = `<div class="list-note">
@@ -35,6 +82,27 @@ class Note {
 
 	}
 
+
+
+	/**
+	 * Function create a search note that represented on web-site
+	 * like a note with medium size image and that note contains into
+	 * left or right list of notes. This note corresponding
+	 * for searching news.
+	 * 
+	 * @function
+	 * @param {Object} data - The news metadata.
+	 * @param {Array} data.multimedia - Container of multimedia data.
+	 * @param {String} data.multimedia[].url - Remote address of current one news image.
+	 * @param {String} data.web_url - Remote address of corresponding article on main site.
+	 * @param {Object} data.headline - Metadata of title of current one news.
+	 * @param {String} data.headline.main - Title of current one news.
+	 * @param {Object} data.byline - Metadata of author of current one news.
+	 * @param {String} data.byline.original - The author of current one news.
+	 * @param {String} data.snippet - Short article story of current one news.
+	 * @static
+	 * @returns {String} - HTML code of current one news for adding it into web-site content.
+	 */
 	static getSearchNote(data) {
 
 		let img = (0 !== data.multimedia.length) ? `style="min-height: 150px;">
