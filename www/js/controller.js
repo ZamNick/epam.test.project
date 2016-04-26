@@ -204,10 +204,6 @@ class Controller {
 
 			Connector.searchQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
 
-			DOM.get("left-list").hide();
-			DOM.get("right-list").hide();
-			DOM.get("preloader").show();
-
 		} else {
 
 			let page = +DOM.get("current-page").getHTML();
@@ -221,11 +217,11 @@ class Controller {
 			DOM.get("current-page").setHTML(page);
 			Connector.searchQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
 
-			DOM.get("left-list").hide();
-			DOM.get("right-list").hide();
-			DOM.get("preloader").show();
-
 		}
+
+		DOM.get("left-list").hide();
+		DOM.get("right-list").hide();
+		DOM.get("preloader").show();
 
 		event.stopPropagation();
 	}
@@ -241,10 +237,6 @@ class Controller {
 
 			Connector.searchQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
 
-			DOM.get("left-list").hide();
-			DOM.get("right-list").hide();
-			DOM.get("preloader").show();
-
 		} else {
 
 			let page = +DOM.get("current-page").getHTML();
@@ -256,11 +248,11 @@ class Controller {
 
 			Connector.searchQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
 
-			DOM.get("left-list").hide();
-			DOM.get("right-list").hide();
-			DOM.get("preloader").show();
-
 		}
+
+		DOM.get("left-list").hide();
+		DOM.get("right-list").hide();
+		DOM.get("preloader").show();
 
 		event.stopPropagation();
 	}
