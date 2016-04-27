@@ -5,6 +5,20 @@ import Connector from './connector.js';
 import Factory from './factory.js';
 import { DOM } from './DOMManipulator.js';
 
+
+/**
+ * A class represent a main instance of application, the part
+ * of the application that handles user interaction.
+ * A controller is the link between a user and system. It represents
+ * a main point of entry.
+ * @class
+ * 
+ * @requires config.js
+ * @requires connector.js
+ * @requires factory.js
+ * @requires DOMManipulator.js
+ * @author Nikolay Zamulov <zamulov8@gmail.com> 
+ */
 class Controller {
 
 	constructor() {
@@ -38,10 +52,15 @@ class Controller {
 
 	}
 
+
 	searchLineKeyPressHandler(event) {
 
 		DOM.get("search-line").attr('pure', "false");
 
+
+		/**
+		 * If the Enter keyboard button was pressed.
+		 */
 		if(13 === event.keyCode) {
 
 			DOM.get("left-list").hide();
@@ -61,12 +80,14 @@ class Controller {
 
 	}
 
+
 	bodyClickHandler() {
 
 		DOM.get("sections-menu").setClass("hide");
 		DOM.get("search-menu").setClass("hide");
 
 	}
+
 
 	sectionsButtonClickHandler(event) {
 
@@ -82,6 +103,7 @@ class Controller {
 		event.stopPropagation();
 	}
 
+
 	searchButtonClickHandler(event) {
 
 		if("show" === DOM.get("sections-menu").getClass()) {
@@ -95,6 +117,7 @@ class Controller {
 
 		event.stopPropagation();
 	}
+
 
 	githubButtonClickHandler() {
 		location.href = config.GitHubReference;
@@ -139,6 +162,7 @@ class Controller {
 		event.stopPropagation();
 	}
 
+
 	static updateTopStories(data) {
 
 		DOM.get("left-list").clear();
@@ -159,6 +183,7 @@ class Controller {
 		DOM.get("section-name").show();
 	}
 
+
 	static updateSearches(data) {
 
 		DOM.get("left-list").clear();
@@ -178,6 +203,7 @@ class Controller {
 
 		DOM.get("paging-menu").show();
 	}
+
 
 	previousPageButtonClickHandler(event) {
 
@@ -211,6 +237,7 @@ class Controller {
 
 		event.stopPropagation();
 	}
+
 
 	nextPageButtonClickHandler(event) {
 
