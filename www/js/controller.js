@@ -189,11 +189,6 @@ class Controller {
 			DOM
 			  .get(i % 2 === 0 ? "left-list" : "right-list")
 			  .appendHTML(Factory.createNote(data[i], (true === search ? "search" : (i < 4 ? "main" : "list"))));
-			/*if(i % 2 === 0) {
-				DOM.get("left-list").appendHTML(Factory.createNote(data[i], (true === search ? "search" : (i < 4 ? "main" : "list"))));
-			} else {
-				DOM.get("right-list").appendHTML(Factory.createNote(data[i], (true === search ? "search" : (i < 4 ? "main" : "list"))));
-			}*/
 		}
 
 		DOM.get("preloader").hide();
