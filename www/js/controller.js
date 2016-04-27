@@ -186,11 +186,14 @@ class Controller {
 		DOM.get("right-list").clear();
 
 		for(let i = 0; i < data.length; ++i) {
-			if(i % 2 === 0) {
+			DOM
+			  .get(i % 2 === 0 ? "left-list" : "right-list")
+			  .appendHTML(Factory.createNote(data[i], (true === search ? "search" : (i < 4 ? "main" : "list"))));
+			/*if(i % 2 === 0) {
 				DOM.get("left-list").appendHTML(Factory.createNote(data[i], (true === search ? "search" : (i < 4 ? "main" : "list"))));
 			} else {
 				DOM.get("right-list").appendHTML(Factory.createNote(data[i], (true === search ? "search" : (i < 4 ? "main" : "list"))));
-			}
+			}*/
 		}
 
 		DOM.get("preloader").hide();
