@@ -165,45 +165,38 @@ class Controller {
 
 	static updateTopStories(data) {
 
-		DOM.get("left-list").clear();
-		DOM.get("right-list").clear();
 		DOM.get("section-name").clear().setHTML(data.section.charAt(0).toUpperCase() + data.section.slice(1));
 
-		for(let i = 0; i < data.results.length; ++i) {
-			if(i % 2 === 0) {
-				DOM.get("left-list").appendHTML(Factory.createNote(data.results[i], (i < 4) ? "main" : "list"));
-			} else {
-				DOM.get("right-list").appendHTML(Factory.createNote(data.results[i], (i < 4) ? "main" : "list"));
-			}
-		}
+		Controller.updateAndShowListsOfNotes(data.results, false);
 
-		DOM.get("preloader").hide();
-		DOM.get("left-list").show();
-		DOM.get("right-list").show();
 		DOM.get("section-name").show();
 	}
 
 
 	static updateSearches(data) {
 
+		Controller.updateAndShowListsOfNotes(data.response.docs, true);
+
+		DOM.get("paging-menu").show();
+	}
+
+	static updateAndShowListsOfNotes(data, search) {
+
 		DOM.get("left-list").clear();
 		DOM.get("right-list").clear();
 
-		for(let i = 0; i < data.response.docs.length; ++i) {
+		for(let i = 0; i < data.length; ++i) {
 			if(i % 2 === 0) {
-				DOM.get("left-list").appendHTML(Factory.createNote(data.response.docs[i], "search"));
+				DOM.get("left-list").appendHTML(Factory.createNote(data[i], (true === search ? "search" : (i < 4 ? "main" : "list"))));
 			} else {
-				DOM.get("right-list").appendHTML(Factory.createNote(data.response.docs[i], "search"));
+				DOM.get("right-list").appendHTML(Factory.createNote(data[i], (true === search ? "search" : (i < 4 ? "main" : "list"))));
 			}
 		}
 
 		DOM.get("preloader").hide();
 		DOM.get("left-list").show();
 		DOM.get("right-list").show();
-
-		DOM.get("paging-menu").show();
 	}
-
 
 	previousPageButtonClickHandler(event) {
 
