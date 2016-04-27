@@ -74,7 +74,7 @@ class Controller {
 
 			DOM.get("search-line").attr('pure', "true");
 
-			Connector.searchQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
+			Connector.searchQuery(DOM.get("search-line").getValue(), 0, Controller.updateSearches);
 
 		}
 
@@ -157,7 +157,7 @@ class Controller {
 
 		DOM.get("search-line").attr('pure', "true");
 
-		Connector.searchQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
+		Connector.searchQuery(DOM.get("search-line").getValue(), 0, Controller.updateSearches);
 
 		event.stopPropagation();
 	}
@@ -214,7 +214,7 @@ class Controller {
 			DOM.get("current-page").setHTML(1);
 			DOM.get("previous-page-button").setClass("disabled");
 
-			Connector.searchQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
+			Connector.searchQuery(DOM.get("search-line").getValue(), 0, Controller.updateSearches);
 
 		} else {
 
@@ -227,7 +227,7 @@ class Controller {
 			}
 
 			DOM.get("current-page").setHTML(page);
-			Connector.searchQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
+			Connector.searchQuery(DOM.get("search-line").getValue(), page - 1, Controller.updateSearches);
 
 		}
 
@@ -248,7 +248,7 @@ class Controller {
 			DOM.get("current-page").setHTML(1);
 			DOM.get("previous-page-button").setClass("disabled");
 
-			Connector.searchQuery(DOM.get("search-line").getElement().value, 0, Controller.updateSearches);
+			Connector.searchQuery(DOM.get("search-line").getValue(), 0, Controller.updateSearches);
 
 		} else {
 
@@ -259,7 +259,7 @@ class Controller {
 			DOM.get("previous-page-button").setClass("");
 			DOM.get("current-page").setHTML(page);
 
-			Connector.searchQuery(DOM.get("search-line").getElement().value, page - 1, Controller.updateSearches);
+			Connector.searchQuery(DOM.get("search-line").getValue(), page - 1, Controller.updateSearches);
 
 		}
 

@@ -41,6 +41,10 @@ let DOMManipulator = (function() {
 			return this;
 		},
 
+		getValue: function() {
+			return _currentElement.value;
+		},
+
 
 		/**
 		 * @param {Function} handler - Callback function that will be triggered when event will be occured.
